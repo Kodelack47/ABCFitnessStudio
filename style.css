@@ -1,0 +1,247 @@
+/* ABC Fitness Studio - style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #1a1a2e;
+}
+
+/* HEADER */
+header {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header img {
+  height: 50px;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+header nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+header nav a:hover {
+  color: #00b4d8;
+}
+
+/* MAIN */
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+main h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #1a1a2e;
+}
+
+main p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* CARDS */
+.card-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.card h3 {
+  color: #00b4d8;
+  margin-bottom: 8px;
+}
+
+/* IMAGES */
+.image-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.image-row div {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.image-row img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* CATEGORY LIST */
+.category-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  max-width: 400px;
+}
+
+.category-list li {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+/* TABLE - GALLERY */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table td {
+  border: 1px solid #ddd;
+  padding: 16px;
+  text-align: center;
+  vertical-align: top;
+  background-color: white;
+  width: 33%;
+}
+
+table img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+table h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+table p {
+  font-size: 0.88rem;
+  color: #444;
+}
+
+/* HOURS TABLE */
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+.hours-table td {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+/* BUTTONS */
+button {
+  background-color: #1a1a2e;
+  color: white;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+button:hover {
+  background-color: #00b4d8;
+}
+
+/* FORM */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: Arial, sans-serif;
+}
+
+form textarea {
+  height: 90px;
+  resize: vertical;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* FOOTER */
+footer {
+  background-color: #1a1a2e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer input {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-right: 6px;
+}
+
+footer button {
+  background-color: #00b4d8;
+  padding: 7px 14px;
+  margin-top: 0;
+}
+
+footer button:hover {
+  background-color: #0096b7;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 4px;
+  font-size: 0.88rem;
+}
+
+footer a:hover {
+  color: #00b4d8;
+}
+
+footer p {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}

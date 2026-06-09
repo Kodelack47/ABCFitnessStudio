@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community - ABC Fitness Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="ABC Fitness Studio Logo">
+    <h1>Community Corner</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="community.html">Community</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Member Spotlight</h2>
+    <div class="card-row">
+      <div class="card">
+        <h3>Marcus T.</h3>
+        <p>Marcus joined ABC Fitness six months ago and has already lost 30 pounds and finished his first 5K. His dedication inspires everyone around him.</p>
+      </div>
+      <div class="card">
+        <h3>Diane R.</h3>
+        <p>Diane started with our beginner yoga class and now helps lead warm ups for new members. A true example of what consistency can do.</p>
+      </div>
+      <div class="card">
+        <h3>James O.</h3>
+        <p>James has been with us for two years and recently hit a personal record on his deadlift. He credits the coaches and the early morning crew.</p>
+      </div>
+    </div>
+
+    <h2>Community Involvement</h2>
+    <div class="card-row">
+      <div class="card">
+        <h3>Local 5K Charity Run</h3>
+        <p>ABC Fitness organized a team of 40 members for the annual community 5K, raising over $2,000 for the local youth sports program.</p>
+      </div>
+      <div class="card">
+        <h3>Free Youth Fitness Day</h3>
+        <p>We hosted a free open door fitness day for local students, offering mini classes in HIIT, yoga, and strength basics. Over 60 students attended.</p>
+      </div>
+    </div>
+
+    <h2>Events and Collaborations</h2>
+    <p>This month we are collaborating with a local sports nutrition brand for a free sample station and nutrition Q and A after Saturday morning classes.</p>
+    <p>We are also hosting a member appreciation night at the end of the month with giveaways and a group workout session.</p>
+    <p>Sign up for our newsletter to stay updated, or contact us at <a href="mailto:info@abcfitness.com">info@abcfitness.com</a></p>
+  </main>
+
+  <footer>
+    <p>Sign up for our Newsletter</p>
+    <input type="email" id="email1" placeholder="Your email">
+    <button onclick="subscribe()">Subscribe</button>
+    <br>
+    <a href="index.html">Home</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="aboutus.html">About Us</a> |
+    <a href="community.html">Community</a>
+  </footer>
+
+  <script>
+    function subscribe() {
+      var email = document.getElementById("email1").value;
+      if (email == "") {
+        alert("Please fill out this field.");
+      } else {
+        alert("Thank you for subscribing!");
+      }
+    }
+  </script>
+
+</body>
+</html>

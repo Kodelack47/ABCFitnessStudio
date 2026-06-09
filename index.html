@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABC Fitness Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="ABC Fitness Studio Logo">
+    <h1>ABC Fitness Studio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="community.html">Community</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Welcome to ABC Fitness Studio</h2>
+    <p>We offer a wide range of fitness classes for all levels. Whether you are just starting out or looking to push your limits, we have something for you.</p>
+
+    <h2>Why Train With Us</h2>
+    <div class="card-row">
+      <div class="card">
+        <h3>Expert Coaches</h3>
+        <p>Our certified trainers are here to guide you every step of the way.</p>
+      </div>
+      <div class="card">
+        <h3>Flexible Schedule</h3>
+        <p>Morning, afternoon, and evening classes available to fit your lifestyle.</p>
+      </div>
+      <div class="card">
+        <h3>Great Community</h3>
+        <p>Join a welcoming group of members who support each other every day.</p>
+      </div>
+    </div>
+
+    <h2>Featured Classes</h2>
+    <div class="image-row">
+      <div>
+        <img src="product1.png" alt="HIIT Class">
+        <p>HIIT Training</p>
+      </div>
+      <div>
+        <img src="product2.png" alt="Yoga Class">
+        <p>Flow Yoga</p>
+      </div>
+    </div>
+
+    <h2>Shop by Category</h2>
+    <ul class="category-list">
+      <li>Strength Training</li>
+      <li>Cardio Classes</li>
+      <li>Yoga and Flexibility</li>
+      <li>HIIT Workouts</li>
+      <li>Pilates</li>
+      <li>Personal Training</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>Sign up for our Newsletter</p>
+    <input type="email" id="email1" placeholder="Your email">
+    <button onclick="subscribe()">Subscribe</button>
+    <br>
+    <a href="index.html">Home</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="aboutus.html">About Us</a> |
+    <a href="community.html">Community</a>
+  </footer>
+
+  <script>
+    function subscribe() {
+      var email = document.getElementById("email1").value;
+      if (email == "") {
+        alert("Please fill out this field.");
+      } else {
+        alert("Thank you for subscribing!");
+      }
+    }
+  </script>
+
+</body>
+</html>

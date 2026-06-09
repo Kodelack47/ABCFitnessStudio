@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ABC Fitness Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="ABC Fitness Studio Logo">
+    <h1>About Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="community.html">Community</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About Us</h2>
+    <p>ABC Fitness Studio was founded with one goal in mind: to make quality fitness available to everyone in a friendly and supportive environment.</p>
+    <p>Our certified trainers work with members at every level, from beginners to experienced athletes. We offer a wide range of classes to challenge, inspire, and energize you.</p>
+    <p>We are more than a gym. We are a community built around growth, discipline, and encouragement.</p>
+
+    <h2>Business Hours</h2>
+    <table class="hours-table">
+      <tr>
+        <td>Monday - Friday</td>
+        <td>5:30 AM - 9:00 PM</td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td>7:00 AM - 6:00 PM</td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td>8:00 AM - 4:00 PM</td>
+      </tr>
+    </table>
+
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" placeholder="Your Name"><br><br>
+
+      <label for="email">Email Address:</label><br>
+      <input type="email" id="email" placeholder="Your Email"><br><br>
+
+      <label for="phone">Phone Number:</label><br>
+      <input type="tel" id="phone" placeholder="Your Phone Number (Optional)"><br><br>
+
+      <label for="feedback">Feedback/Order Information:</label><br>
+      <textarea id="feedback" placeholder="Your Feedback or Custom Order Information"></textarea><br><br>
+
+      <input type="checkbox" id="custom-order">
+      <label for="custom-order">Custom Order</label><br><br>
+
+      <button type="button" onclick="submitForm()">Submit</button>
+      <button type="button" onclick="clearForm()">Clear Form</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Sign up for our Newsletter</p>
+    <input type="email" id="email1" placeholder="Your email">
+    <button onclick="subscribe()">Subscribe</button>
+    <br>
+    <a href="index.html">Home</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="aboutus.html">About Us</a> |
+    <a href="community.html">Community</a>
+  </footer>
+
+  <script>
+    function submitForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var feedback = document.getElementById("feedback").value;
+      if (name == "" || email == "" || feedback == "") {
+        alert("Please enter your name, email and feedback!");
+        return;
+      }
+      var data = {
+        name: name,
+        email: email,
+        phone: document.getElementById("phone").value,
+        feedback: feedback,
+        customOrder: document.getElementById("custom-order").checked
+      };
+      localStorage.setItem(name, JSON.stringify(data));
+      alert("Thank you for your message, " + name + "!");
+    }
+
+    function clearForm() {
+      document.getElementById("contact-form").reset();
+    }
+
+    function subscribe() {
+      var email = document.getElementById("email1").value;
+      if (email == "") {
+        alert("Please fill out this field.");
+      } else {
+        alert("Thank you for subscribing!");
+      }
+    }
+  </script>
+
+</body>
+</html>

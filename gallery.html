@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - ABC Fitness Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="ABC Fitness Studio Logo">
+    <h1>Gallery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="community.html">Community</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Choose from Our Classes</h2>
+    <button onclick="viewCart()">View Cart</button>
+
+    <table>
+      <tr>
+        <td>
+          <img src="product1.png" alt="HIIT Training">
+          <h3>HIIT Training</h3>
+          <p>High energy interval circuits to burn calories and build endurance.</p>
+          <button onclick="addToCart('HIIT Training')">Add to Cart</button>
+        </td>
+        <td>
+          <img src="product2.png" alt="Flow Yoga">
+          <h3>Flow Yoga</h3>
+          <p>A calming yoga class focused on breath and flexibility for all levels.</p>
+          <button onclick="addToCart('Flow Yoga')">Add to Cart</button>
+        </td>
+        <td>
+          <img src="product3.png" alt="Strength Training">
+          <h3>Strength Training</h3>
+          <p>Build muscle and improve functional strength with guided weight work.</p>
+          <button onclick="addToCart('Strength Training')">Add to Cart</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="product4.png" alt="Pilates">
+          <h3>Pilates</h3>
+          <p>Core focused movements that improve posture and body awareness.</p>
+          <button onclick="addToCart('Pilates')">Add to Cart</button>
+        </td>
+        <td>
+          <img src="product5.png" alt="Spin Cycling">
+          <h3>Spin Cycling</h3>
+          <p>Indoor cycling sessions with great music and an energizing atmosphere.</p>
+          <button onclick="addToCart('Spin Cycling')">Add to Cart</button>
+        </td>
+        <td>
+          <img src="product6.png" alt="Boxing Fitness">
+          <h3>Boxing Fitness</h3>
+          <p>A full body cardio workout inspired by boxing, great for stress relief.</p>
+          <button onclick="addToCart('Boxing Fitness')">Add to Cart</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="product7.png" alt="Zumba Dance">
+          <h3>Zumba Dance</h3>
+          <p>Fun dance fitness class with Latin rhythms for all fitness levels.</p>
+          <button onclick="addToCart('Zumba Dance')">Add to Cart</button>
+        </td>
+        <td>
+          <img src="product8.png" alt="Stretch and Recover">
+          <h3>Stretch and Recover</h3>
+          <p>Guided deep stretching to keep your muscles healthy and injury free.</p>
+          <button onclick="addToCart('Stretch and Recover')">Add to Cart</button>
+        </td>
+        <td>
+          <img src="product9.png" alt="Personal Training">
+          <h3>Personal Training</h3>
+          <p>One on one sessions with a trainer tailored to your personal goals.</p>
+          <button onclick="addToCart('Personal Training')">Add to Cart</button>
+        </td>
+      </tr>
+    </table>
+
+    <div id="cart-modal" style="display:none; border:1px solid #ccc; padding:20px; margin-top:20px;">
+      <h2>Your Cart</h2>
+      <ul id="cart-list"></ul>
+      <button onclick="processOrder()">Process Order</button>
+      <button onclick="clearCart()">Clear Cart</button>
+      <button onclick="closeCart()">X</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Sign up for our Newsletter</p>
+    <input type="email" id="email1" placeholder="Your email">
+    <button onclick="subscribe()">Subscribe</button>
+    <br>
+    <a href="index.html">Home</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="aboutus.html">About Us</a> |
+    <a href="community.html">Community</a>
+  </footer>
+
+  <script>
+    function addToCart(item) {
+      var cart = JSON.parse(sessionStorage.getItem("cartItems") || "[]");
+      cart.push(item);
+      sessionStorage.setItem("cartItems", JSON.stringify(cart));
+      alert("Item added to the cart: " + item);
+    }
+
+    function viewCart() {
+      var cart = JSON.parse(sessionStorage.getItem("cartItems") || "[]");
+      var list = document.getElementById("cart-list");
+      list.innerHTML = "";
+      for (var i = 0; i < cart.length; i++) {
+        var li = document.createElement("li");
+        li.textContent = cart[i];
+        list.appendChild(li);
+      }
+      document.getElementById("cart-modal").style.display = "block";
+    }
+
+    function closeCart() {
+      document.getElementById("cart-modal").style.display = "none";
+    }
+
+    function clearCart() {
+      sessionStorage.removeItem("cartItems");
+      document.getElementById("cart-list").innerHTML = "";
+      alert("Cart is cleared!");
+    }
+
+    function processOrder() {
+      sessionStorage.removeItem("cartItems");
+      document.getElementById("cart-list").innerHTML = "";
+      document.getElementById("cart-modal").style.display = "none";
+      alert("Thank you for your order!");
+    }
+
+    function subscribe() {
+      var email = document.getElementById("email1").value;
+      if (email == "") {
+        alert("Please fill out this field.");
+      } else {
+        alert("Thank you for subscribing!");
+      }
+    }
+  </script>
+
+</body>
+</html>
