@@ -1,5 +1,7 @@
 ABC fitness studio website built with HTML, CSS, and JavaScript.
 
+Live Site:** [View Project]-https://kodelack47.github.io/ABCFitnessStudio/gallery.html
+
 ## Pages
 
 - **Home** - Welcome page with studio information
