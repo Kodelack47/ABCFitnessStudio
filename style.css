@@ -1,6 +1,14 @@
 /* Author: Ousmana Tunkara · github.com/Kodelack47 · ABC Fitness Studio */
 /* ABC Fitness Studio - style.css */
 
+/* Include padding and borders inside an element's width,
+   so width: 100% inputs never overflow the screen */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -254,4 +262,93 @@ footer a:hover {
 footer p {
   margin-bottom: 8px;
   font-size: 0.9rem;
+}
+
+/* RESPONSIVE: HEADER
+   On phones, keep the logo and page title on one row and give
+   the navigation links their own full-width row underneath. */
+@media (max-width: 700px) {
+  header {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  header nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+  }
+
+  header nav a {
+    margin-left: 0;
+    padding: 4px 0;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 16px;
+  }
+}
+
+/* RESPONSIVE: GALLERY
+   The class gallery is a 3-column table. On tablets it becomes
+   2 columns and on phones 1 column, so images stay a usable size. */
+@media (max-width: 900px) {
+  table,
+  table tbody {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  table {
+    grid-template-columns: 1fr;
+  }
+
+  table tr {
+    display: contents;
+  }
+
+  table td {
+    display: block;
+    width: auto;
+  }
+
+  table img {
+    max-height: 200px;
+  }
+
+  /* Keep the business-hours table a normal table */
+  .hours-table {
+    display: table;
+  }
+
+  .hours-table tbody {
+    display: table-row-group;
+  }
+
+  .hours-table tr {
+    display: table-row;
+  }
+
+  .hours-table td {
+    display: table-cell;
+  }
+}
+
+@media (max-width: 560px) {
+  table tbody {
+    grid-template-columns: 1fr;
+  }
+
+  .hours-table td {
+    padding: 10px 8px;
+  }
 }
