@@ -263,3 +263,37 @@ footer p {
   margin-bottom: 8px;
   font-size: 0.9rem;
 }
+
+/* RESPONSIVE: HEADER
+   On phones, keep the logo and page title on one row and give
+   the navigation links their own full-width row underneath. */
+@media (max-width: 700px) {
+  header {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  header nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+  }
+
+  header nav a {
+    margin-left: 0;
+    padding: 4px 0;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 16px;
+  }
+}
