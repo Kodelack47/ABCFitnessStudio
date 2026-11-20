@@ -22,36 +22,49 @@ body {
   min-height: 100vh;
 }
 
-/* HEADER */
+/* HEADER
+   Logo on the left, navigation on the right. */
 header {
   background-color: #1a1a2e;
   color: white;
   padding: 15px 30px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
 }
 
 header img {
   height: 50px;
+  display: block;
 }
 
-header h1 {
-  flex: 1;
-  text-align: center;
-  font-size: 1.5rem;
-  color: white;
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
 }
 
 header nav a {
   color: white;
-  margin-left: 15px;
   text-decoration: none;
   font-size: 0.95rem;
+  padding: 6px 0;
+  /* Transparent line that becomes visible on hover / current page */
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
 }
 
-header nav a:hover {
+header nav a:hover,
+header nav a:focus-visible {
   color: #00b4d8;
+  border-bottom-color: #00b4d8;
+}
+
+/* The page you are currently on */
+header nav a.active {
+  color: #00b4d8;
+  border-bottom-color: #00b4d8;
 }
 
 /* MAIN */
@@ -265,31 +278,23 @@ footer p {
 }
 
 /* RESPONSIVE: HEADER
-   On phones, keep the logo and page title on one row and give
-   the navigation links their own full-width row underneath. */
+   On phones, tighten the spacing so the logo and links fit,
+   and let the links wrap onto a second centered row if needed. */
 @media (max-width: 700px) {
   header {
     flex-wrap: wrap;
+    justify-content: center;
     padding: 12px 16px;
     gap: 10px;
   }
 
-  header h1 {
-    margin: 0;
-    font-size: 1.3rem;
+  header img {
+    height: 42px;
   }
 
   header nav {
-    width: 100%;
-    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px 18px;
-  }
-
-  header nav a {
-    margin-left: 0;
-    padding: 4px 0;
+    gap: 4px 16px;
   }
 
   main {
