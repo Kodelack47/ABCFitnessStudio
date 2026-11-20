@@ -1,6 +1,14 @@
 /* Author: Ousmana Tunkara · github.com/Kodelack47 · ABC Fitness Studio */
 /* ABC Fitness Studio - style.css */
 
+/* Include padding and borders inside an element's width,
+   so width: 100% inputs never overflow the screen */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
