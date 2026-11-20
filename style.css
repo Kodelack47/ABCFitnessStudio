@@ -297,3 +297,58 @@ footer p {
     padding: 0 16px;
   }
 }
+
+/* RESPONSIVE: GALLERY
+   The class gallery is a 3-column table. On tablets it becomes
+   2 columns and on phones 1 column, so images stay a usable size. */
+@media (max-width: 900px) {
+  table,
+  table tbody {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  table {
+    grid-template-columns: 1fr;
+  }
+
+  table tr {
+    display: contents;
+  }
+
+  table td {
+    display: block;
+    width: auto;
+  }
+
+  table img {
+    max-height: 200px;
+  }
+
+  /* Keep the business-hours table a normal table */
+  .hours-table {
+    display: table;
+  }
+
+  .hours-table tbody {
+    display: table-row-group;
+  }
+
+  .hours-table tr {
+    display: table-row;
+  }
+
+  .hours-table td {
+    display: table-cell;
+  }
+}
+
+@media (max-width: 560px) {
+  table tbody {
+    grid-template-columns: 1fr;
+  }
+
+  .hours-table td {
+    padding: 10px 8px;
+  }
+}
